@@ -157,7 +157,7 @@ span img{
 
 .linematch{
     height: 5px;
-    width: 35%;
+    width: 30%;
     position: absolute;
     margin-top: 25px;
     left: 0;
@@ -356,6 +356,8 @@ h1 i{
     height: 80px;
     width: 80px;
 }
+
+
 
 @media (max-width: 768px) {
     .row {
