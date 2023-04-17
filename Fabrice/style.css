@@ -3,6 +3,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
+#progress-bar{
+    --progress:0;
+    height: 6px;
+    width: var(--progress);
+    background-color: #50C2F6;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.navbar-brand img{
+    height: 50px;
+    width: 50px;
+}
+.navbar-nav a{
+    font-family: Arial;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+.navbar-nav a.active{
+    border-bottom: 3px solid #50C2F6;
+}
+.navbar-nav a:hover{
+    border-bottom: 3px solid #50C2F6;
+}
 section .team{
     margin: auto;
     max-width: 70%;
@@ -253,6 +277,7 @@ section h2{
     color: #fff;
     margin-top: 35px;
     margin-left: -51px;
+    border-bottom:5px solid #b642f5 ;
 }
 .contact .second{
     display: flex;
