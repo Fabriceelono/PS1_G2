@@ -86,7 +86,7 @@ tr:nth-child(odd) {
     margin-bottom: 20px;
 }
 
-#endMessage button {
+#endMessage #playagain {
     margin: 0 auto;
     cursor: pointer;
     display: block;
@@ -98,9 +98,30 @@ tr:nth-child(odd) {
     color: #fff;
 
 }
+#endMessage #next {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    background-color: #b642f5;
+    color: #fff;
 
-button:hover {
+}
+
+#endMessage #playagain:hover {
     background-color: #A32D9B;
+}
+#endMessage #next:hover {
+    background-color: #A32D9B;
+}
+#endMessage #next a{
+    color: white;
+    text-decoration: none;
 }
 
 #endMessage {
