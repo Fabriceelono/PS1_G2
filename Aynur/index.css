@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
 
 .navbar-brand img, .footer-logo{
     height: 60px;
     width: 60px;
 }
+.navbar-nav{
+   position: relative;
+    left: 5%;
+}
 .navbar-nav a{
     font-family: Arial;
     font-weight: bold;
+    font-size: 18px;
     border-bottom: 2px solid transparent;
 }
+.navbar-nav .it1, .it2{
+  margin-left: 30px;
+
+}
+
+
 .navbar-nav a.active{
     border-bottom: 3px solid #50C2F6;
 }
@@ -69,6 +81,7 @@
 
 .btn{
     background-color: #b642f5;
+    border: #b642f5;
 }
 
 .flip-box {
@@ -167,7 +180,7 @@ span img{
 
 .linematch2{
     height: 5px;
-    width: 34%;
+    width: 30%;
     position: absolute;
     margin-top: 25px;
     right: 0;
@@ -177,6 +190,7 @@ span img{
 
 .aboutme h1{
     text-align: center;
+    margin-right: 0;
     font-family: 'Russo One', sans-serif;
 }
 
@@ -357,7 +371,37 @@ h1 i{
     width: 80px;
 }
 
+.carousel-caption{
+    position: absolute;
+    top: 30%;
+    background-color: rgba(157, 68, 207, 0.5);
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 300px;
+    text-align: left;
+    border-radius: 20px;
 
+}
+
+.carousel-caption p{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+
+
+.carousel-caption h1{
+    font-family: 'Russo One', sans-serif;
+    color: #e8c312;
+}
+
+.carousel-caption .btn{
+    font-weight: bold;
+    padding: 7px;
+    width: 120px;
+    height: 40px;
+}
 
 @media (max-width: 768px) {
     .row {
@@ -421,7 +465,7 @@ h1 i{
         top: 550px;
         color: white;
         width: 600px;
-        height: 200px;
+        height: 20%;
         border-radius: 30px;
         background-color: #b642f5;
     }
@@ -434,6 +478,10 @@ h1 i{
 
     }
 
+    .carousel-caption{
+        display: block !important;
+    }
+
 
 
 }
@@ -441,7 +489,7 @@ h1 i{
 @media (max-width: 568px) {
     .cardg{
         width: 400px;
-        height: 280px;
+        height: 30%;
         margin: auto;
     }
 
@@ -451,5 +499,10 @@ h1 i{
 
     .aboutme h1 i{
         display: none;
+    }
+
+
+    .carousel-caption{
+        display: block !important;
     }
 }
