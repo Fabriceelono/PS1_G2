@@ -5,3 +5,4 @@ function updateProgressBar(){
 }
 
 document.addEventListener('scroll', updateProgressBar);
+//This scirpt helps in knowing if you are close to the end of the page with the progress bar value increasing when scrolling down

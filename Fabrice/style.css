@@ -15,7 +15,7 @@
 /*video in matching page*/
 .contain{
     width: 100%;
-    height: 80vh;
+    height: 88vh;
     background-color: rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
@@ -26,9 +26,14 @@
     text-align: center;
 }
 .content h1{
-    font-size: 47px;
     color: white;
-    margin-bottom: 50px;
+    font-family: 'Russo One', sans-serif;
+}
+.content h3{
+    font-family: 'Play', sans-serif;
+    color: white;
+    padding-bottom: 30px;
+    font-size: 30px;
 }
 .content a{
     font-size: 23px;
@@ -40,8 +45,8 @@
     transition: 0.3s;
 }
 .content a:hover{
-    background-color: #fff;
-    color: black;
+    background-color: #b642f5;
+    color: #fff;
 }
 .background-clip{
     position: absolute;
@@ -63,94 +68,121 @@
     }
 
 }
-/*choose section*/
-.choose_section{
-    background-color: #7c1cb1   ;
-}
-.choose_section h1{
+/*Choice page*/
+.choice h1{
     color: white;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.4);
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 90px;
+    margin-top: 160px;
 }
 .selection{
     display: flex;
     justify-content: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
-.selection .all{
-    background-color: #50C2F6;
-    width: 280px;
-    height: 190px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+.selection1:hover{
+    box-shadow: 0px 8px 10px 1px #b642f5;
+    transform: translateY(-8px);
+    transition-duration: 350ms;
+}
+.selection1{
+    margin-right: 20px;
+    background-color: #ccc;
+    padding: 15px 0 25px 20px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.8);
 
 }
-.selection .all p{
+.selection1 h2{
+    text-transform: capitalize;
+    font-family: 'Play', sans-serif;
+    font-size: 40px;
     text-align: center;
+    color:  #b642f5;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+.selection1 p{
+    margin-right: 99px;
     font-size: 20px;
-    color: white;
-    padding-top: 60px;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'circular';
 }
-.selection .all  a{
-    display: block;
-    text-align: center;
-    border-radius: 15px;
+.selection1 a{
+    font-size: 23px;
+    color: white;
     text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 10px 10px 10px 10px;
-    margin-left: 80px;
-    margin-right: 80px;
-    font-weight: bold;
-    font-family: 'Mulish', sans-serif;
+    padding: 15px 25px;
+    box-shadow: 1px 2px 1px rgba(0,0,0,0.4);
+    border-radius: 50px;
     transition: 0.3s;
-
+    background-color: #b642f5;
 }
-.selection .all a:hover{
-    background-color: #fff;
+.selection1 a:hover{
+    background-color: white;
     color: black;
 }
-.selection .specific{
-    background-color: #50C2F6;
-    width: 280px;
-    height: 190px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+.selection2{
+    margin-right: 20px;
+    background-color: #ccc;
+    padding: 15px 0 25px 20px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.8);
+}
+.selection2:hover{
+    box-shadow: 0px 8px 10px 1px #b642f5;
+    transform: translateY(-8px);
+    transition-duration: 350ms;
+}
+.selection2 h2{
+    text-transform: capitalize;
+    font-family: 'Play', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color:  #b642f5;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.7);
+}
+.selection2 p{
+    margin-right: 99px;
+    font-size: 20px;
+    font-family: 'circular';
 
 }
-.selection .specific p{
-    text-align: center;
-    font-size: 20px;
+.selection2 a{
+    font-size: 23px;
     color: white;
-    padding-top: 60px;
-    font-family: 'Mulish', sans-serif;
-}
-.selection .specific a{
-    display: block;
-    text-align: center;
-    border-radius: 15px;
     text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 10px 10px 10px 10px;
-    margin-left: 80px;
-    margin-right: 80px;
-    font-weight: bold;
-    font-family: 'Mulish', sans-serif;
+    box-shadow: 1px 2px 1px rgba(0,0,0,0.4);
+    padding: 15px 25px;
+    border-radius: 50px;
     transition: 0.3s;
+    background-color: #b642f5;
 }
-.selection .specific a:hover{
-    background-color: #fff;
+.selection2 a:hover{
+    background-color: white;
     color: black;
 }
-
-
-
+/*choice 2 page*/
+h1{
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 90px;
+    padding-top: 20px;
+}
+h3{
+    font-family: 'Play', sans-serif;
+    text-transform: capitalize;
+    color: #b642f5;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
 /*nav section*/
 .navbar-brand img, .footer-logo{
     height: 60px;
@@ -188,6 +220,7 @@ section .team p img{
     width: 100%;
 
 }
+/*About us section*/
 section h2{
     font-family: 'Russo One', sans-serif;
     padding-left: 30%;
@@ -248,85 +281,20 @@ section h2{
     color: #fff;
     text-shadow: 1px 1px 1px black;
 }
-#contact{
-    background-image: url("david-werbrouck-5GwLlb-_UYk-unsplash.jpg");
-    padding: 7%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-}
-.contact{
-    display: flex;
-    justify-content: space-between;
-    background-image: linear-gradient(to bottom, #A32D9B, #EB00A4);
-    max-width: 100%;
-    box-shadow: -9px 12px 50px grey;
-    border-radius: 15px;
-    margin:0 auto;
-    padding-top: 45px;
-    padding-bottom: 80px;
-    padding-left: 40px;
-    padding-right: 20px;
-    flex-wrap: wrap;
-}
-.contact .first h2{
-    font-family: 'Russo One', sans-serif;
-    font-size: 40px;
-    color: #fff;
-    margin-left: 59px;
-}
-.contact .second{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 20px;
-}
-.contact .second p{
-    color: white;
-    margin-left: 50px;
-    font-family: 'Play', sans-serif;
-    font-size: 20px;
 
 
-}
-
-.contact .second p i{
-    font-size: 35px;
-    color: black;
-}
-/*footer for the game*/
-footer {
-    text-align: center;
-    background-color: #b642f5;
-
-}
-footer p{
-    font-family: 'Mulish', sans-serif;
-    color: white;
-    padding-bottom: 10px;
-    margin: 0;
-}
-footer p img{
-    width: 13%;
-}
-footer p a i{
-    font-size: 30px;
-    color: white;
-    padding-top: 10px;
-    padding-left: 13px;
-}
-footer p a i:hover{
-    color: darkblue;
-}
 /*Medium screen below*/
 
 
 @media screen and (min-width:768px){
+
   .contain  .content h1{
         font-size: 95px;
         color: white;
-        margin-bottom: 50px;
+      text-shadow: 1px 2px 1px rgba(0,0,0,0.4);
+        /*margin-bottom: 50px;*/
     }
+    /*  About us section*/
 section .team{
     display: flex;
     margin: auto;
@@ -376,7 +344,7 @@ section h2{
     background-image:
             linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
             linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
+    /*background-size: 100%;*/
 
 }
     #task .task .card:hover{
@@ -392,15 +360,9 @@ section h2{
 #task .task .card h3{
     text-align: center;
 }
-#contact{
-    background-image: url("david-werbrouck-5GwLlb-_UYk-unsplash.jpg");
-    padding: 7%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
-}
 .game{
-    padding: 56px;
+    padding: 56px 0 56px 0;
     background: rgb(105,19,91);
     background: linear-gradient(90deg, rgba(105,19,91,1) 0%, rgba(36,139,168,1) 35%, rgba(251,251,251,1) 100%);
 }
@@ -411,73 +373,6 @@ section h2{
     color: #fff;
     text-shadow: 1px 1px 1px black;
 }
-.contact{
-    display: flex;
-    justify-content: space-between;
-    background-image: linear-gradient(to bottom, #A32D9B, #EB00A4);
-    max-width: 50%;
-    box-shadow: -9px 12px 50px grey;
-    border-radius: 15px;
-    margin:0 auto;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-left: 65px;
-    padding-right: 20px;
-}
-.contact:hover{
-    box-shadow: 0px 8px 10px 1px #b642f5;
-    transform: translateY(-8px);
-    transition-duration: 350ms;
-}
-.contact .first h2{
-    font-family: 'Russo One', sans-serif;
-    font-size: 40px;
-    color: #fff;
-    margin-top: 35px;
-    margin-left: -51px;
-    border-bottom:5px solid #b642f5 ;
-}
-.contact .second{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 54px;
-    gap: 20px;
-}
-.contact .second p{
-    color: white;
-    margin-left: 50px;
-    font-family: 'Play', sans-serif;
-    font-size: 20px;
-
+/*End of about us section*/
 
 }
-
-.contact .second p i{
-    font-size: 35px;
-    color: black;
-}
-
-footer {
-    text-align: center;
-    background-color: #b642f5;
-
-}
-footer p{
-    font-family: 'Mulish', sans-serif;
-    color: white;
-    padding-bottom: 10px;
-    margin: 0;
-}
-footer p img{
-    width: 13%;
-}
-footer p a i{
-    font-size: 30px;
-    color: white;
-    padding-top: 10px;
-    padding-left: 13px;
-}
-footer p a i:hover{
-    color: darkblue;
-}}
