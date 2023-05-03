@@ -1,4 +1,3 @@
-Certainly, here's a template for a professional readme file:
 
 # Project Name
 
