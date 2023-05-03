@@ -1,5 +1,5 @@
 
-# Project Name
+# Major-A : PS1- G2
 
 Brief description of the project.
 
