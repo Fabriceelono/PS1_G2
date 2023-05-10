@@ -16,11 +16,13 @@
 .contain{
     width: 100%;
     height: 87vh;
-    background-color: rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+video{
+    width: 100%;
 }
 .content{
     text-align: center;
@@ -28,6 +30,7 @@
 .content h1{
     color: white;
     font-family: 'Russo One', sans-serif;
+    text-shadow: 12px 2px 16px rgba(0,0,0,0.4);
 }
 .content h3{
     font-family: 'Play', sans-serif;
@@ -38,6 +41,7 @@
 .content a{
     font-size: 23px;
     color: white;
+    background-color: #b642f5;
     text-decoration: none;
     border: 2px solid #fff;
     padding: 15px 25px;
@@ -45,8 +49,9 @@
     transition: 0.3s;
 }
 .content a:hover{
-    background-color: #b642f5;
+    background-color: transparent;
     color: #fff;
+    text-shadow: 1px 2px -1px rgba(0,0,0,0.4);
 }
 .background-clip{
     position: absolute;
@@ -86,32 +91,47 @@
     margin-right: auto;
     width: 60%;
 }
+.selection1{
+    margin-right: 20px;
+    width: 800px;
+    height: 254px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+
+}
+
 .selection1:hover{
     box-shadow: 0px 8px 10px 1px #b642f5;
     transform: translateY(-8px);
     transition-duration: 350ms;
 }
-.selection1{
-    margin-right: 20px;
-    background-color: #ccc;
-    padding: 15px 0 25px 20px;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.8);
-
+.card_content {
+    background: rgb(5, 6, 45);
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
 }
+
 .selection1 h2{
     text-transform: capitalize;
     font-family: 'Play', sans-serif;
     font-size: 40px;
     text-align: center;
     color:  #b642f5;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+
 }
 .selection1 p{
-    margin-right: 99px;
+
     font-size: 20px;
     font-family: 'circular';
+    color: white;
+    text-align: center;
+
+}
+.card_content{
+    text-align: center;
 }
 .selection1 a{
     font-size: 23px;
@@ -122,6 +142,7 @@
     border-radius: 50px;
     transition: 0.3s;
     background-color: #b642f5;
+    display: inline-block;
 }
 .selection1 a:hover{
     background-color: white;
@@ -129,11 +150,12 @@
 }
 .selection2{
     margin-right: 20px;
-    background-color: #ccc;
-    padding: 15px 0 25px 20px;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.8);
+    width: 800px;
+    height: 254px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
 }
 .selection2:hover{
     box-shadow: 0px 8px 10px 1px #b642f5;
@@ -146,12 +168,12 @@
     font-size: 40px;
     text-align: center;
     color:  #b642f5;
-    text-shadow: 1px 2px 1px rgba(0,0,0,0.7);
 }
 .selection2 p{
-    margin-right: 99px;
     font-size: 20px;
-    font-family: 'circular';
+    font-family: 'circular',sans-serif;
+    color: white;
+    text-align: center;
 
 }
 .selection2 a{
@@ -163,6 +185,7 @@
     border-radius: 50px;
     transition: 0.3s;
     background-color: #b642f5;
+    display: inline-block;
 }
 .selection2 a:hover{
     background-color: white;
@@ -340,11 +363,6 @@ section h2{
     border-radius: 15px;
     padding-top: 10px;
     margin-bottom: 45px;
-    background-color: #fff;
-    background-image:
-            linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-            linear-gradient(#eee .1em, transparent .1em);
-    /*background-size: 100%;*/
 
 }
     #task .task .card:hover{
