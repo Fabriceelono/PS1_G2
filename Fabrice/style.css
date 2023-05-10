@@ -206,6 +206,10 @@ h3{
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 }
+/*games section*/
+section h1, section p{
+    color: white;
+}
 /*nav section*/
 .navbar-brand img, .footer-logo{
     height: 60px;
