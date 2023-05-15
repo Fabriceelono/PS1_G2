@@ -1,5 +1,6 @@
 const draggableListItems = document.querySelectorAll('.draggable-list li');
 const endMessage = document.getElementById('endMessage');
+const gameOverMessage = document.querySelector('.game-over-message');
 
 // current phrase being dragged
 let selectedId;
@@ -9,6 +10,8 @@ let dropTargetId;
 
 // counter for correct phrases
 let matchingCounter = 0;
+//count fail trias
+let failCounter = 0;
 
 addEventListeners();
 
@@ -44,8 +47,24 @@ function dragDrop() {
         showNotification();
     }
 
-    if (matchingCounter === 6) {
+    if (matchingCounter === 6 && failCounter > 0) {
         endMessage.style.display = 'block';
+        gameOverMessage.textContent = `Game Over. Failed tries: ${failCounter}`;
+        gameOverMessage.style.color='white';
+        gameOverMessage.style.fontSize='25px';
+        gameOverMessage.style.textAlign='center';
+        gameOverMessage.style.backgroundColor='#50C2F6';
+        gameOverMessage.style.fontFamily='Russo One';
+    }
+    if (matchingCounter===6 && failCounter===0){
+        endMessage.style.display = 'block';
+        gameOverMessage.style.display='block';
+        gameOverMessage.textContent = `You are excellent in this Field with ${failCounter} failed tries`;
+        gameOverMessage.style.color='white';
+        gameOverMessage.style.fontSize='25px';
+        gameOverMessage.style.textAlign='center';
+        gameOverMessage.style.backgroundColor='#50C2F6';
+        gameOverMessage.style.fontFamily='Russo One';
     }
 
     this.classList.remove('over');
@@ -100,6 +119,8 @@ function checkForMatch2(selected, dropTarget) {
 
 function playAgain() {
     matchingCounter = 0;
+    failCounter = 0;
+    gameOverMessage.style.display='none';
     endMessage.style.display = 'none';
     draggableListItems.forEach(item => {
         document.getElementById(item.id).style.display = 'block';
@@ -129,6 +150,7 @@ function showNotification() {
     notification.style.textAlign = 'center';
     notification.style.opacity = '0'; // start with 0 opacity
     document.body.appendChild(notification);
+    failCounter++;
 
     // Add a transition effect
     setTimeout(() => {

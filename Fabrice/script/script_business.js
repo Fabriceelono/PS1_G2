@@ -60,7 +60,7 @@ function dragDrop() {
     if (matchingCounter===3 && failCounter===0){
         endMessage.style.display = 'block';
         gameOverMessage.style.display='block';
-        gameOverMessage.textContent = `Game Over. Failed tries: ${failCounter}`;
+        gameOverMessage.textContent = `You are excellent in this Field with ${failCounter} failed tries`;
         gameOverMessage.style.color='white';
         gameOverMessage.style.fontSize='25px';
         gameOverMessage.style.textAlign='center';

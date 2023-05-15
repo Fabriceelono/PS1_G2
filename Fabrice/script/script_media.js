@@ -47,9 +47,19 @@ function dragDrop() {
         showNotification();
     }
 
-    if (matchingCounter === 6 || failCounter > 0) {
+    if (matchingCounter === 6 && failCounter > 0) {
         endMessage.style.display = 'block';
         gameOverMessage.textContent = `Game Over. Failed tries: ${failCounter}`;
+        gameOverMessage.style.color='white';
+        gameOverMessage.style.fontSize='25px';
+        gameOverMessage.style.textAlign='center';
+        gameOverMessage.style.backgroundColor='#50C2F6';
+        gameOverMessage.style.fontFamily='Russo One';
+    }
+    if (matchingCounter===6 && failCounter===0){
+        endMessage.style.display = 'block';
+        gameOverMessage.style.display='block';
+        gameOverMessage.textContent = `You are excellent in this Field with ${failCounter} failed tries`;
         gameOverMessage.style.color='white';
         gameOverMessage.style.fontSize='25px';
         gameOverMessage.style.textAlign='center';
