@@ -13,7 +13,7 @@ Brief description of the project.
 
 | Name             | Role              | Contact Information                       |
 | ---------------- | ----------------- | ----------------------------------------- |
-| Fabrice Elono     | Team Member       | [Email](mailto:email@example.com) \| [LinkedIn](https://www.linkedin.com/in/username/) |
+| Fabrice Elono     | Team Member       | [Email](mailto:r0912443@student.thomasmore.be) \| [LinkedIn](https://www.linkedin.com/in/Fabriceelono/) |
 | Egemen Alkan       | Team Member       | [Email](mailto:email@example.com) \| [LinkedIn](https://www.linkedin.com/in/username/) |
 | Aynur Guliyeva      | Team Member       | [Email](mailto:email@example.com) \| [LinkedIn](https://www.linkedin.com/in/username/) |
 
