@@ -242,6 +242,10 @@ section .team{
     margin: auto;
     max-width: 70%;
 }
+section .team p{
+    color: black;
+    font-size: 25px;
+}
 
 section .team p img{
     width: 100%;
@@ -326,6 +330,9 @@ section .team{
     display: flex;
     margin: auto;
     max-width: 70%;
+}
+section .team p{
+    color: black;
 }
 
 section .team p img{
