@@ -1,6 +1,7 @@
 const draggableListItems = document.querySelectorAll('.draggable-list li');
 const endMessage = document.getElementById('endMessage');
 const gameOverMessage = document.querySelector('.game-over-message');
+const section=document.getElementById('titleSection');
 
 // current phrase being dragged
 let selectedId;
@@ -49,12 +50,17 @@ function dragDrop() {
 
     if (matchingCounter === 6 && failCounter > 0) {
         endMessage.style.display = 'block';
-        gameOverMessage.textContent = `Game Over. Failed tries: ${failCounter}`;
+        gameOverMessage.textContent = `Game Over. Failed tries: ${failCounter} matched:${matchingCounter}`;
         gameOverMessage.style.color='white';
         gameOverMessage.style.fontSize='25px';
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        section.style.display='none'
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
     }
     if (matchingCounter===6 && failCounter===0){
         endMessage.style.display = 'block';
@@ -65,6 +71,11 @@ function dragDrop() {
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        section.style.display='none'
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
     }
 
     this.classList.remove('over');
@@ -120,6 +131,7 @@ function checkForMatch2(selected, dropTarget) {
 function playAgain() {
     matchingCounter = 0;
     failCounter = 0;
+    section.style.display='none'
     gameOverMessage.style.display='none';
     endMessage.style.display = 'none';
     draggableListItems.forEach(item => {

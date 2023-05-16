@@ -1,6 +1,7 @@
 const draggableListItems = document.querySelectorAll('.draggable-list li');
 const endMessage = document.getElementById('endMessage');
 const gameOverMessage = document.querySelector('.game-over-message');
+const section=document.getElementById('titleSection');
 
 // current phrase being dragged
 let selectedId;
@@ -55,6 +56,11 @@ function dragDrop() {
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        section.style.display='none'
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
     }
     if (matchingCounter===6 && failCounter===0){
         endMessage.style.display = 'block';
@@ -65,6 +71,11 @@ function dragDrop() {
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        section.style.display='none'
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
     }
 
     this.classList.remove('over');

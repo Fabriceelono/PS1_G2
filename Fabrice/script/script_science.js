@@ -55,6 +55,10 @@ function dragDrop() {
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
 
     }
     if (matchingCounter===3 && failCounter===0){
@@ -66,6 +70,10 @@ function dragDrop() {
         gameOverMessage.style.textAlign='center';
         gameOverMessage.style.backgroundColor='#50C2F6';
         gameOverMessage.style.fontFamily='Russo One';
+        gameOverMessage.style.top='135px';
+        gameOverMessage.style.width='25%';
+        gameOverMessage.style.position='fixed';
+        gameOverMessage.style.padding='35px';
     }
 
     this.classList.remove('over');
