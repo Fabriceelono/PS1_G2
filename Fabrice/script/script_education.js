@@ -131,7 +131,7 @@ function checkForMatch2(selected, dropTarget) {
 function playAgain() {
     matchingCounter = 0;
     failCounter = 0;
-    section.style.display='none'
+    section.style.display='block';
     gameOverMessage.style.display='none';
     endMessage.style.display = 'none';
     draggableListItems.forEach(item => {
