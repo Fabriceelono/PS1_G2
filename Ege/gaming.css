@@ -66,6 +66,10 @@ a:hover {
     border-bottom: 3px solid #50C2F6;
 }
 
+.navbar-nav .dropdown-item:hover{
+    border-bottom: 3px solid #b642f5;
+}
+
 
 .container {
     display: flex;
@@ -149,6 +153,15 @@ a:hover {
 .row {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.f{
+    margin: auto;
+    height: auto;
+    width: 80%;
+    left: 150px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card > h4,
@@ -353,13 +366,75 @@ body, html {
 }
 
 .quiz {
-    background-color: #34495E;
     padding-bottom: 60px;
     width: 100%;
     border-radius: 2%;
-    color: #fff;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.first{
+    background-color: #27dde6;
+    color: #000;
+}
+.first1{
+    background-color: #b6f9fc;
+    color: #000;
+}
+.second{
+    background-color: #de78c8;
+    color: #fff;
+}
+.second1{
+    background-color: #fab9ec;
+    color: #000;
+}
+.third{
+    background-color: #008080;
+    color: #fff;
+}
+.third1{
+    background-color: #57b3b3;
+    color: #000;
+}
+.fourth{
+    background-color: #f7f30c;
+    color: #000;
+}
+.fourth1{
+    background-color: #faf893;
+    color: #000;
+}
+.fifth{
+    background-color: #000080;
+    color: #fff;
+}
+.fifth1{
+    background-color: #0505f7;
+    color: #fff;
+}
+.sixth{
+    background-color: #02a818;
+    color: #fff;
+}
+.sixth1{
+    background-color: #05f725;
+    color: #000;
+}
+.seventh{
+    background-color: #488c67;
+    color: #fff;
+}
+.seventh1{
+    background-color: #78dea6;
+    color: #000;
+}
+.eight{
+    background-color: #ffb805;
+    color: #fff;
+}
+.eight1{
+    background-color: #fcd162;
+    color: #000;
 }
 
 .quiz > h1 {
@@ -409,7 +484,7 @@ body, html {
 }
 
 .correct, .false {
-    background-color: #109D59;
+    background-color: #037005;
     width: 60px;
     height: 30px;
     line-height: 30px;
