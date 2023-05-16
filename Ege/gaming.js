@@ -1,86 +1,177 @@
 //Media & Communication - Prior Knowledge
-window.onload = function () {
+// window.onload = function () {
+//     var questionArea = document.getElementsByClassName('questions')[0],
+//         answerArea   = document.getElementsByClassName('answers')[0],
+//         checker      = document.getElementsByClassName('checker')[0],
+//         current      = 0,
+//         // An object that holds all the questions + possible answers.
+//         // In the array --> last digit gives the right answer position
+//         allQuestions = {
+//             "What is the difference between mass communication and interpersonal communication?" : ["Mass communication involves communication between individuals, while interpersonal communication involves communication to a large audience", "Mass communication involves communication to a large audience, while interpersonal communication involves communication between individuals", "Mass communication and interpersonal communication are the same thing", 1],
+//
+//             'What is the importance of media literacy?' : ['It allows individuals to analyze and evaluate the messages presented through media channels', 'It helps individuals create content for various media platforms' , 'It helps individuals gain followers on social media', 0],
+//
+//             'What is the purpose of public relations? ' : ['To manage the communication between an organization and its publics', 'To create advertisements for products and services', 'To produce and direct content for film and television', 0]
+//         };
+//     function loadQuestion(curr) {
+//         // This function loads all the question into the questionArea
+//         // It grabs the current question based on the 'current'-variable
+//
+//         var question = Object.keys(allQuestions)[curr];
+//
+//         questionArea.innerHTML = '';
+//         questionArea.innerHTML = question;
+//     }
+//     function loadAnswers(curr) {
+//         // This function loads all the possible answers of the given question
+//         // It grabs the needed answer-array with the help of the current-variable
+//         // Every answer is added with an 'onclick'-function
+//
+//         var answers = allQuestions[Object.keys(allQuestions)[curr]];
+//
+//         answerArea.innerHTML = '';
+//
+//         for (var i = 0; i < answers.length -1; i += 1) {
+//             var createDiv = document.createElement('div'),
+//                 text = document.createTextNode(answers[i]);
+//
+//             createDiv.appendChild(text);
+//             createDiv.addEventListener("click", checkAnswer(i, answers));
+//
+//
+//             answerArea.appendChild(createDiv);
+//         }
+//     }
+//     function checkAnswer(i, arr) {
+//         // This is the function that will run, when clicked on one of the answers
+//         // Check if givenAnswer is same as the correct one
+//         // After this, check if it's the last question:
+//         // If it is: empty the answerArea and let them know it's done.
+//
+//         return function () {
+//             var givenAnswer = i,
+//                 correctAnswer = arr[arr.length-1];
+//
+//             if (givenAnswer === correctAnswer) {
+//                 addChecker(true);
+//             } else {
+//                 addChecker(false);
+//             }
+//
+//             if (current < Object.keys(allQuestions).length -1) {
+//                 current += 1;
+//
+//                 loadQuestion(current);
+//                 loadAnswers(current);
+//             } else {
+//                 questionArea.innerHTML = 'Done';
+//                 answerArea.innerHTML = '';
+//             }
+//
+//         };
+//     }
+//     function addChecker(bool) {
+//         // This function adds a div element to the page
+//         // Used to see if it was correct or false
+//
+//         var createDiv = document.createElement('div'),
+//             txt       = document.createTextNode(current + 1);
+//
+//         createDiv.appendChild(txt);
+//
+//         if (bool) {
+//
+//             createDiv.className += 'correct';
+//             checker.appendChild(createDiv);
+//         } else {
+//             createDiv.className += 'false';
+//             checker.appendChild(createDiv);
+//         }
+//     }
+//     // Start the quiz right away
+//     loadQuestion(current);
+//     loadAnswers(current);
+// };
+
+window.onload = function() {
     var questionArea = document.getElementsByClassName('questions')[0],
-        answerArea   = document.getElementsByClassName('answers')[0],
-        checker      = document.getElementsByClassName('checker')[0],
-        current      = 0,
-        // An object that holds all the questions + possible answers.
-        // In the array --> last digit gives the right answer position
+        answerArea = document.getElementsByClassName('answers')[0],
+        checker = document.getElementsByClassName('checker')[0],
+        current = 0,
+        correctAnswers = 0, // Counter for correct answers
         allQuestions = {
-            "What is the difference between mass communication and interpersonal communication?" : ["Mass communication involves communication between individuals, while interpersonal communication involves communication to a large audience", "Mass communication involves communication to a large audience, while interpersonal communication involves communication between individuals", "Mass communication and interpersonal communication are the same thing", 1],
-
-            'What is the importance of media literacy?' : ['It allows individuals to analyze and evaluate the messages presented through media channels', 'It helps individuals create content for various media platforms' , 'It helps individuals gain followers on social media', 0],
-
-            'What is the purpose of public relations? ' : ['To manage the communication between an organization and its publics', 'To create advertisements for products and services', 'To produce and direct content for film and television', 0]
+            "What is the difference between mass communication and interpersonal communication?": [
+                "Mass communication involves communication between individuals, while interpersonal communication involves communication to a large audience",
+                "Mass communication involves communication to a large audience, while interpersonal communication involves communication between individuals",
+                "Mass communication and interpersonal communication are the same thing",
+                1
+            ],
+            'What is the importance of media literacy?': [
+                'It allows individuals to analyze and evaluate the messages presented through media channels',
+                'It helps individuals create content for various media platforms',
+                'It helps individuals gain followers on social media',
+                0
+            ],
+            'What is the purpose of public relations? ': [
+                'To manage the communication between an organization and its publics',
+                'To create advertisements for products and services',
+                'To produce and direct content for film and television',
+                0
+            ]
         };
+
     function loadQuestion(curr) {
-        // This function loads all the question into the questionArea
-        // It grabs the current question based on the 'current'-variable
-
         var question = Object.keys(allQuestions)[curr];
-
         questionArea.innerHTML = '';
         questionArea.innerHTML = question;
     }
+
     function loadAnswers(curr) {
-        // This function loads all the possible answers of the given question
-        // It grabs the needed answer-array with the help of the current-variable
-        // Every answer is added with an 'onclick'-function
-
         var answers = allQuestions[Object.keys(allQuestions)[curr]];
-
         answerArea.innerHTML = '';
 
-        for (var i = 0; i < answers.length -1; i += 1) {
+        for (var i = 0; i < answers.length - 1; i += 1) {
             var createDiv = document.createElement('div'),
                 text = document.createTextNode(answers[i]);
 
             createDiv.appendChild(text);
-            createDiv.addEventListener("click", checkAnswer(i, answers));
-
+            createDiv.addEventListener('click', checkAnswer(i, answers));
 
             answerArea.appendChild(createDiv);
         }
     }
-    function checkAnswer(i, arr) {
-        // This is the function that will run, when clicked on one of the answers
-        // Check if givenAnswer is same as the correct one
-        // After this, check if it's the last question:
-        // If it is: empty the answerArea and let them know it's done.
 
-        return function () {
+    function checkAnswer(i, arr) {
+        return function() {
             var givenAnswer = i,
-                correctAnswer = arr[arr.length-1];
+                correctAnswer = arr[arr.length - 1];
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
 
-            if (current < Object.keys(allQuestions).length -1) {
+            if (current < Object.keys(allQuestions).length - 1) {
                 current += 1;
-
                 loadQuestion(current);
                 loadAnswers(current);
             } else {
                 questionArea.innerHTML = 'Done';
                 answerArea.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
-
         };
     }
-    function addChecker(bool) {
-        // This function adds a div element to the page
-        // Used to see if it was correct or false
 
+    function addChecker(bool) {
         var createDiv = document.createElement('div'),
-            txt       = document.createTextNode(current + 1);
+            txt = document.createTextNode(current + 1);
 
         createDiv.appendChild(txt);
 
         if (bool) {
-
             createDiv.className += 'correct';
             checker.appendChild(createDiv);
         } else {
@@ -88,7 +179,13 @@ window.onload = function () {
             checker.appendChild(createDiv);
         }
     }
-    // Start the quiz right away
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers;
+        checker.appendChild(resultDiv);
+    }
+
     loadQuestion(current);
     loadAnswers(current);
 };
@@ -106,6 +203,7 @@ window.addEventListener('load', function () {
         answerArea1   = document.getElementsByClassName('answers1')[0],
         checker1      = document.getElementsByClassName('checker1')[0],
         current1      = 0,
+        correctAnswers1 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions1 = {
@@ -156,6 +254,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers1 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -168,6 +267,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea1.innerHTML = 'Done';
                 answerArea1.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -190,6 +290,11 @@ window.addEventListener('load', function () {
             checker1.appendChild(createDiv1);
         }
     }
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers1;
+        checker1.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion1(current1);
     loadAnswers1(current1);
@@ -208,6 +313,7 @@ window.addEventListener('load', function () {
         answerArea2   = document.getElementsByClassName('answers2')[0],
         checker2      = document.getElementsByClassName('checker2')[0],
         current2      = 0,
+        correctAnswers2 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions2 = {
@@ -258,6 +364,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers2 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -270,6 +377,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea2.innerHTML = 'Done';
                 answerArea2.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -292,6 +400,11 @@ window.addEventListener('load', function () {
             checker2.appendChild(createDiv2);
         }
     }
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers2;
+        checker2.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion2(current2);
     loadAnswers2(current2);
@@ -312,6 +425,7 @@ window.addEventListener('load', function () {
         answerArea3   = document.getElementsByClassName('answers3')[0],
         checker3      = document.getElementsByClassName('checker3')[0],
         current3      = 0,
+        correctAnswers3 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions3 = {
@@ -362,6 +476,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers3 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -374,6 +489,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea3.innerHTML = 'Done';
                 answerArea3.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -396,6 +512,12 @@ window.addEventListener('load', function () {
             checker3.appendChild(createDiv3);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers3;
+        checker3.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion3(current3);
     loadAnswers3(current3);
@@ -415,6 +537,7 @@ window.addEventListener('load', function () {
         answerArea4   = document.getElementsByClassName('answers4')[0],
         checker4      = document.getElementsByClassName('checker4')[0],
         current4      = 0,
+        correctAnswers4 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions4 = {
@@ -465,6 +588,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers4 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -477,6 +601,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea4.innerHTML = 'Done';
                 answerArea4.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -499,6 +624,12 @@ window.addEventListener('load', function () {
             checker4.appendChild(createDiv4);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers4;
+        checker4.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion4(current4);
     loadAnswers4(current4);
@@ -518,6 +649,7 @@ window.addEventListener('load', function () {
         answerArea5   = document.getElementsByClassName('answers5')[0],
         checker5      = document.getElementsByClassName('checker5')[0],
         current5      = 0,
+        correctAnswers5 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions5 = {
@@ -568,6 +700,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers5 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -580,6 +713,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea5.innerHTML = 'Done';
                 answerArea5.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -602,6 +736,12 @@ window.addEventListener('load', function () {
             checker5.appendChild(createDiv5);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers5;
+        checker5.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion5(current5);
     loadAnswers5(current5);
@@ -620,6 +760,7 @@ window.addEventListener('load', function () {
         answerArea6   = document.getElementsByClassName('answers6')[0],
         checker6      = document.getElementsByClassName('checker6')[0],
         current6      = 0,
+        correctAnswers6 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions6 = {
@@ -670,6 +811,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers6 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -682,6 +824,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea6.innerHTML = 'Done';
                 answerArea6.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -704,6 +847,12 @@ window.addEventListener('load', function () {
             checker6.appendChild(createDiv6);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers6;
+        checker6.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion6(current6);
     loadAnswers6(current6);
@@ -722,6 +871,7 @@ window.addEventListener('load', function () {
         answerArea7   = document.getElementsByClassName('answers7')[0],
         checker7      = document.getElementsByClassName('checker7')[0],
         current7      = 0,
+        correctAnswers7 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions7 = {
@@ -772,6 +922,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers7 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -784,6 +935,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea7.innerHTML = 'Done';
                 answerArea7.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -806,6 +958,12 @@ window.addEventListener('load', function () {
             checker7.appendChild(createDiv7);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers7;
+        checker7.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion7(current7);
     loadAnswers7(current7);
@@ -823,6 +981,7 @@ window.addEventListener('load', function () {
         answerArea8   = document.getElementsByClassName('answers8')[0],
         checker8      = document.getElementsByClassName('checker8')[0],
         current8      = 0,
+        correctAnswers8 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions8 = {
@@ -873,6 +1032,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers8 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -885,6 +1045,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea8.innerHTML = 'Done';
                 answerArea8.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -907,6 +1068,12 @@ window.addEventListener('load', function () {
             checker8.appendChild(createDiv8);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers8;
+        checker8.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion8(current8);
     loadAnswers8(current8);
@@ -925,6 +1092,7 @@ window.addEventListener('load', function () {
         answerArea9   = document.getElementsByClassName('answers9')[0],
         checker9      = document.getElementsByClassName('checker9')[0],
         current9      = 0,
+        correctAnswers9 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions9 = {
@@ -975,6 +1143,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers9 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -987,6 +1156,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea9.innerHTML = 'Done';
                 answerArea9.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1009,6 +1179,12 @@ window.addEventListener('load', function () {
             checker9.appendChild(createDiv9);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers9;
+        checker9.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion9(current9);
     loadAnswers9(current9);
@@ -1027,6 +1203,7 @@ window.addEventListener('load', function () {
         answerArea10   = document.getElementsByClassName('answers10')[0],
         checker10      = document.getElementsByClassName('checker10')[0],
         current10      = 0,
+        correctAnswers10 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions10 = {
@@ -1077,6 +1254,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers10 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1089,6 +1267,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea10.innerHTML = 'Done';
                 answerArea10.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1111,6 +1290,12 @@ window.addEventListener('load', function () {
             checker10.appendChild(createDiv10);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers10;
+        checker10.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion10(current10);
     loadAnswers10(current10);
@@ -1128,6 +1313,7 @@ window.addEventListener('load', function () {
         answerArea11   = document.getElementsByClassName('answers11')[0],
         checker11      = document.getElementsByClassName('checker11')[0],
         current11      = 0,
+        correctAnswers11 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions11 = {
@@ -1178,6 +1364,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers11 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1190,6 +1377,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea11.innerHTML = 'Done';
                 answerArea11.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1212,6 +1400,12 @@ window.addEventListener('load', function () {
             checker11.appendChild(createDiv11);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers11;
+        checker11.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion11(current11);
     loadAnswers11(current11);
@@ -1230,6 +1424,7 @@ window.addEventListener('load', function () {
         answerArea12   = document.getElementsByClassName('answers12')[0],
         checker12      = document.getElementsByClassName('checker12')[0],
         current12      = 0,
+        correctAnswers12 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions12 = {
@@ -1280,6 +1475,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers12 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1292,6 +1488,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea12.innerHTML = 'Done';
                 answerArea12.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1314,6 +1511,12 @@ window.addEventListener('load', function () {
             checker12.appendChild(createDiv12);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers12;
+        checker12.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion12(current12);
     loadAnswers12(current12);
@@ -1333,6 +1536,7 @@ window.addEventListener('load', function () {
         answerArea13   = document.getElementsByClassName('answers13')[0],
         checker13      = document.getElementsByClassName('checker13')[0],
         current13      = 0,
+        correctAnswers13 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions13 = {
@@ -1383,6 +1587,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers13 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1395,6 +1600,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea13.innerHTML = 'Done';
                 answerArea13.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1417,6 +1623,12 @@ window.addEventListener('load', function () {
             checker13.appendChild(createDiv13);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers13;
+        checker13.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion13(current13);
     loadAnswers13(current13);
@@ -1436,6 +1648,7 @@ window.addEventListener('load', function () {
         answerArea14   = document.getElementsByClassName('answers14')[0],
         checker14      = document.getElementsByClassName('checker14')[0],
         current14      = 0,
+        correctAnswers14 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions14 = {
@@ -1486,6 +1699,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers14 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1498,6 +1712,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea14.innerHTML = 'Done';
                 answerArea14.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1520,6 +1735,12 @@ window.addEventListener('load', function () {
             checker14.appendChild(createDiv14);
         }
     }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers14;
+        checker14.appendChild(resultDiv);
+    }
     // Start the quiz right away
     loadQuestion14(current14);
     loadAnswers14(current14);
@@ -1538,6 +1759,7 @@ window.addEventListener('load', function () {
         answerArea15   = document.getElementsByClassName('answers15')[0],
         checker15      = document.getElementsByClassName('checker15')[0],
         current15      = 0,
+        correctAnswers15 = 0, // Counter for correct answers
         // An object that holds all the questions + possible answers.
         // In the array --> last digit gives the right answer position
         allQuestions15 = {
@@ -1588,6 +1810,7 @@ window.addEventListener('load', function () {
 
             if (givenAnswer === correctAnswer) {
                 addChecker(true);
+                correctAnswers15 += 1; // Increment the counter
             } else {
                 addChecker(false);
             }
@@ -1600,6 +1823,7 @@ window.addEventListener('load', function () {
             } else {
                 questionArea15.innerHTML = 'Done';
                 answerArea15.innerHTML = '';
+                displayResult(); // Display the total number of correct answers
             }
 
         };
@@ -1621,6 +1845,12 @@ window.addEventListener('load', function () {
             createDiv15.className += 'false';
             checker15.appendChild(createDiv15);
         }
+    }
+
+    function displayResult() {
+        var resultDiv = document.createElement('div');
+        resultDiv.innerHTML = '<br><br>Correct Answers: ' + correctAnswers15;
+        checker15.appendChild(resultDiv);
     }
     // Start the quiz right away
     loadQuestion15(current15);
