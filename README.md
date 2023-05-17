@@ -21,8 +21,8 @@ Our team comprises three members: Fabrice, Aynur, and Egemen. It is a diverse gr
 If you have any questions or feedback, feel free to reach out to via Teams
 ## Instructions
 Our website is hosted on sinners.be so here is the link of our website
-Click here : https://majora.sinners.be/
-Our Website was made in group or sections Aynur worked on the Home page 
-Ege worked on the Quizz section 
-Fabrice on the Matching game and about us section 
+-Click here : https://majora.sinners.be/
+-Our Website was made in group or sections Aynur worked on the Home page 
+-Ege worked on the Quizz section 
+-Fabrice on the Matching game and about us section 
 - Our git hub as well is organised in folders each member worked on his folder and we just git push the overall work of the project
