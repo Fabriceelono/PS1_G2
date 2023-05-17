@@ -1,5 +1,7 @@
 
 # Major-A : PS1- G2
+Link to our website 
+-  https://majora.sinners.be/
 
 Our team comprises three members: Fabrice, Aynur, and Egemen. It is a diverse group with individuals from distinct backgrounds collaborating on a project called Major-A, inspired by Utopia 2.0. The project involves the development of a website primarily designed for desktop and tablet devices, aimed at providing high school seniors with easy access to information on their potential academic majors.
 
